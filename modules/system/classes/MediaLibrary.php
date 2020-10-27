@@ -71,7 +71,7 @@ class MediaLibrary
     protected function init()
     {
         $this->storageFolder = self::validatePath(Config::get('cms.storage.media.folder', 'media'), true);
-        $this->storagePath = rtrim(Config::get('cms.storage.media.path', '/storage/app/media'), '/');
+        $this->storagePath = Config::get('app.url') . rtrim(Config::get('cms.storage.media.path', '/storage/app/media'), '/');
 
         $this->ignoreNames = Config::get('cms.storage.media.ignore', FileDefinitions::get('ignoreFiles'));
 
